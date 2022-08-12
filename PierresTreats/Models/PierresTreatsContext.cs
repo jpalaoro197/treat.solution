@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace PierresTreats.Models
+namespace PierresTreat.Models
 {
-    public class PierresTreatsContext : IdentityDbContext<ApplicationUser>
+    public class PierresTreatContext : IdentityDbContext<ApplicationUser>
   {
     public DbSet<Flavor> Categories { get; set; }
     public DbSet<Treat> Treats { get; set; }
     public DbSet<FlavorTreat> FlavorTreat { get; set; }
 
-    public PierresTreatsContext(DbContextOptions options) : base(options) { }
+    public PierresTreatContext(DbContextOptions options) : base(options) { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
