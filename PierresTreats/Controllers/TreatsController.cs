@@ -50,6 +50,7 @@ namespace PierresTreat.Controllers
       return View(thisTreat);
     }
 
+    [Authorize]
     public ActionResult Edit(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
@@ -85,6 +86,7 @@ namespace PierresTreat.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize]
     public ActionResult Delete(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
@@ -99,7 +101,7 @@ namespace PierresTreat.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
+    [Authorize]
     [HttpPost]
 public ActionResult DeleteFlavor(int joinId)
 {
